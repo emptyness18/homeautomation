@@ -1,24 +1,40 @@
-from nrf24 import NRF24
+#!/usr/bin/env python
+
 import time
+import sys
+from RF24 import *
 
-pipes = [[0xe7, 0xe7, 0xe7, 0xe7, 0xe7], [0xc2, 0xc2, 0xc2, 0xc2, 0xc2]]
+radio = RF24(22, 0)
 
-radio = NRF24()
+pipes = [0xF0F0F0F0E1, 0xF0F0F0F0D2]
 
-radio.begin(0, 1, 25, 26) #Set CE and IRQ pins
-radio.setRetries(15, 15)
-radio.setPayloadSize(8)
-radio.setChannel(0x60)
-
-radio.setDataRate(NRF24.BR_250KBPS)
-radio.setPALevel(NRF24.PA_MAX)
-
-radio.setAutoAck(1)
+radio.begin()
+radio.enableDynamicPayloads()
+radio.setRetries(5,15)
 
 radio.openWritingPipe(pipes[0])
-radio.openReadingPipe(1, pipes[1])
-
-radio.startListening()
-radio.stopListening()
+radio.openReadingPipe(1,pipes[1])
 
 radio.printDetails()
+
+#radio.stopListening()
+radio.startListening()
+
+while not radio.available():
+     print 'No data'
+     time.sleep(1/10)
+
+plen = radio.getDynamicPayloadSize()
+receive_payload = radio.read(plen)
+print 'Received ', receive_payload, ' len ',  plen
+
+radio.stopListening()
+
+data = 'off'
+
+if len(sys.argv) > 1:
+     data = sys.argv[1]
+
+print 'Sending ', data
+radio.write(data)
+
