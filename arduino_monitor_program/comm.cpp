@@ -1,22 +1,44 @@
-#include <SPI.h>
-#include "RF24.h"
-#include <printf.h>
+#include "comm.h"
 
-enum MessageType { AcknowledgeOK, Light, Temperature }
+Communicator::Communicator(uint64_t readAddress, uint64_t writeAddress, int cePin, int csnPin)
+{
+  _readAddress = readAddress;
+  _writeAddress = writeAddress;
+  _cePin = cePin;
+  _csnPin = csnPin;
+}
+
+void Communicator::setup()
+{
+  _radio = new RF24(_cePin, _csnPin);
+
+  _radio->begin();
+
+  // Set the PA Level low to prevent power supply related issues since this is a
+  // getting_started sketch, and the likelihood of close proximity of the devices. RF24_PA_MAX is default.
+  // radio.setPALevel(RF24_PA_LOW);
+  _radio->setPALevel(RF24_PA_MAX);
+  
+  _radio->enableDynamicPayloads();
+  
+  _radio->openWritingPipe(_writeAddress);
+  _radio->openReadingPipe(1,_readAddress);
+  
+  // Start the radio listening for data
+  _radio->startListening();
+  
+  _radio->printDetails();
+  
+  _radio->stopListening();
+}
 
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
+/*
 RF24 radio(7,8);
 
 const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };
 
-const int LED_PIN = 5;
-
-bool isLEDOn = true;
-
 void setup() {
-  Serial.begin(115200);
-
-  printf_begin();
 
   radio.begin();
   
@@ -35,24 +57,27 @@ void setup() {
   
   radio.printDetails();
   
-  //Setup led
-  pinMode(LED_PIN, OUTPUT);
 }
 
 void loop() {
 
+    char buffer[30];
+    
     if (isLEDOn)
     {
       digitalWrite(LED_PIN, HIGH);
       Serial.println(F("Light is on"));
+      createMessage(Sensor::Light, "1123", buffer);
     }
     else
     {
       digitalWrite(LED_PIN, LOW);
       Serial.println(F("Light is off"));
+      createMessage(Sensor::Light, "0abc", buffer);
     }
     
     radio.stopListening();                                    // First, stop listening so we can talk.
+
 
     if (!radio.write( &isLEDOn, sizeof(bool) ))
     {
@@ -83,11 +108,20 @@ void loop() {
     }
 
     // Try again 1s later
-    delay(100);    
+    delay(1000);    
 }
 
-  
-void createMessage(MessageType type, char[] data, char[] buffer) {
-  
+void createMessage(Sensor::MessageType type, char data[], char buffer[]) {
+    switch (type)
+    {
+      case Sensor::Light:
+        buffer[0] = MessageTypeLight;
+        strcpy(buffer+1, data);
+        break;
+    }
 }
 
+void printMessage(char msg[])
+{
+  Serial.println(msg);
+}*/
