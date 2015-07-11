@@ -5,8 +5,8 @@
 #include "comm.h"
 
 
-const int endLoopDelay = 1000;
-const int LIGHT_PIN = 9;
+const int endLoopDelay = 250;
+const int LIGHT_PIN = 5;
 const int TEMPERATURE_PIN = 0;
 
 Sensor* sensors[10];
@@ -45,9 +45,25 @@ void loop() {
     if (s->hasChanged())
     {
       s->getTextData(buffer);
+
+      comm.send(buffer);
     }
   }
+
+  if (comm.receive(buffer))
+  {
+    for (int i = 0; i < sensorsCount; i++)
+    {
+      Sensor *s = sensors[i];      
   
+      if (s->getMessageType() == Sensor::getMessageTypeFromChar(buffer[0]))
+      {
+        s->processMessage(buffer);
+      }
+    }    
+  }
+
+  printMessageLn(F("\n"));
   // Try again 1s later
   delay(endLoopDelay);    
 }

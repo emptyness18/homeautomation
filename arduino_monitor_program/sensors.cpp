@@ -5,9 +5,9 @@
 // Sensor
 //-------------------------------------------------
 
-char Sensor::getMessageTypeChar()
+char Sensor::getMessageTypeChar(Sensor::MessageType messageType)
 {  
-  switch(_messageType) 
+  switch(messageType) 
   {
     case Light:
       return 'L';
@@ -16,6 +16,24 @@ char Sensor::getMessageTypeChar()
     default:
       return '?';
   }
+}
+
+Sensor::MessageType Sensor::getMessageTypeFromChar(char c)
+{
+  switch(c) 
+  {
+    case 'L':
+      return Light;
+    case 'T':
+      return Temperature;
+    default:
+      return NoSensor;
+  }    
+}
+
+Sensor::MessageType Sensor::getMessageType()
+{
+  return _messageType;
 }
 
 //-------------------------------------------------
@@ -27,7 +45,7 @@ char Sensor::getMessageTypeChar()
 LightSensor::LightSensor(int pin)
 {
   _lightPin = pin;
-  _isOn = false;
+  _isOn = true;
   _messageType = Light;
 }
 
@@ -35,14 +53,7 @@ void LightSensor::setup()
 {  
   pinMode(_lightPin, OUTPUT);
 
-  if (_isOn)
-  {
-    digitalWrite(_lightPin, HIGH);
-  }
-  else
-  {
-    digitalWrite(_lightPin, LOW);    
-  }
+  updateLight();
 }
 
 void LightSensor::read()
@@ -57,6 +68,25 @@ void LightSensor::read()
   }  
 }
 
+void LightSensor::processMessage(char* message)
+{
+  if (strcmp(message+1, ("on")) == 0)
+  {
+    _isOn = true;
+    updateLight();
+  }
+  else if (strcmp(message+1, ("off")) == 0)
+  {
+    _isOn = false;
+    updateLight();
+  }
+  else 
+  {
+    printMessage("Cannot process message ");
+    printMessageLn(message);
+  }
+}
+
 bool LightSensor::hasChanged()
 {
   return true;
@@ -64,7 +94,7 @@ bool LightSensor::hasChanged()
 
 void LightSensor::getTextData(char* buffer)
 {
-  buffer[0] = getMessageTypeChar();
+  buffer[0] = getMessageTypeChar(_messageType);
   if (_isOn)
   {
     strcpy(buffer+1, "on");
@@ -76,6 +106,19 @@ void LightSensor::getTextData(char* buffer)
   
   printMessage(F("Message "));
   printMessageLn(buffer);
+}
+
+void LightSensor::updateLight()
+{
+  if (_isOn)
+  {
+    digitalWrite(_lightPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(_lightPin, LOW);    
+  }
+
 }
 
 //-------------------------------------------------
@@ -123,6 +166,11 @@ void TemperatureSensor::read()
   printMessageLn("C");
 }
 
+void TemperatureSensor::processMessage(char* message)
+{
+  printMessageLn("Process Temperature");
+}
+
 bool TemperatureSensor::hasChanged()
 {
   return true;
@@ -131,7 +179,7 @@ bool TemperatureSensor::hasChanged()
 void TemperatureSensor::getTextData(char* buffer)
 {
   char temperature[10];
-  buffer[0] = getMessageTypeChar();
+  buffer[0] = getMessageTypeChar(_messageType);
   dtostrf(_degrees, 4, 2, temperature);
   strcpy(buffer+1, temperature);  
 

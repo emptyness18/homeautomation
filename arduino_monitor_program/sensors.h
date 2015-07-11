@@ -3,17 +3,22 @@
 class Sensor
 {
 	public: 
-    enum MessageType { AcknowledgeOK, Light, Temperature, OtherS };
+    enum MessageType { AcknowledgeOK, Light, Temperature, NoSensor };
 
     virtual void setup();
     
     virtual void read();
+
+    virtual void processMessage(char* message);
     
 		virtual void getTextData(char* buffer);
 
     virtual bool hasChanged();
     
-    char getMessageTypeChar();
+    static char getMessageTypeChar(Sensor::MessageType messageType);
+    static Sensor::MessageType getMessageTypeFromChar(char c);
+
+    MessageType getMessageType();
 
   protected:
     MessageType _messageType;
@@ -29,6 +34,8 @@ class LightSensor: public Sensor
 
     virtual void read();
     
+    virtual void processMessage(char* message);
+    
     virtual bool hasChanged();
     
 		virtual void getTextData(char* buffer);
@@ -36,6 +43,8 @@ class LightSensor: public Sensor
   private:
     int _lightPin;     
     bool _isOn;
+
+    void updateLight();
 };
 
 class TemperatureSensor: public Sensor
@@ -47,6 +56,8 @@ class TemperatureSensor: public Sensor
     virtual void setup();        
 
     virtual void read();
+    
+    virtual void processMessage(char* message);
     
     virtual bool hasChanged();
     

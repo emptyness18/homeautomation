@@ -1,4 +1,5 @@
 #include "comm.h"
+#include "types.h"
 
 Communicator::Communicator(uint64_t readAddress, uint64_t writeAddress, int cePin, int csnPin)
 {
@@ -31,6 +32,51 @@ void Communicator::setup()
   
   _radio->stopListening();
 }
+
+bool Communicator::send(char* data)
+{
+  // First, stop listening so we can talk.
+  _radio->stopListening();                                    
+
+  if (!_radio->write(data, strlen(data)))
+  {
+    printMessageLn(F("Failed to send data."));
+    return false;
+  }
+  else
+  {
+    printMessage(F("Sent "));
+    printMessageLn(data);
+    return true;
+  }
+}
+
+bool Communicator::receive(char* data)
+{
+  // Now, continue listening
+  _radio->startListening();
+    
+  if (_radio->available() )                           
+  {                                             
+    int len = _radio->getDynamicPayloadSize();
+    Serial.print(F("Len "));
+    Serial.println(len);
+    _radio->read(data, len );
+    data[len] = 0;
+    
+    // Spew it
+    Serial.print(F("Read "));
+    Serial.print(data);
+    Serial.println(F(" value"));
+    
+    return true;
+  }
+  else
+  {
+    return false;   
+  }
+}
+
 
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
 /*

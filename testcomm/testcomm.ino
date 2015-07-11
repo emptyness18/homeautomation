@@ -2,8 +2,6 @@
 #include "RF24.h"
 #include <printf.h>
 
-enum MessageType { AcknowledgeOK, Light, Temperature }
-
 /* Hardware configuration: Set up nRF24L01 radio on SPI bus plus pins 7 & 8 */
 RF24 radio(7,8);
 
@@ -85,9 +83,3 @@ void loop() {
     // Try again 1s later
     delay(100);    
 }
-
-  
-void createMessage(MessageType type, char[] data, char[] buffer) {
-  
-}
-

@@ -7,6 +7,10 @@ class Communicator
     Communicator(uint64_t readAddress, uint64_t writeAddress, int cePin, int csnPin);
     
 		void setup();
+
+    bool send(char* data);
+
+    bool receive(char* data);
    
   private:
 		uint64_t _readAddress;
