@@ -10,15 +10,17 @@ def on_connect(obj, rc):
 def on_message(obj, msg):
 	print(msg.topic + " " + str(msg.payload))
 	#mqttc.publish("home/sala/luz", "ON")
-	radio.stopListening()
-	data = str(msg.payload).lower()
-        print 'Sending ', data
-        radio.write(data)
-        radio.startListening()
+	if msg.topic == "home/sala/luz":
+		radio.stopListening()
+		data = "L" + str(msg.payload).lower()
+        	print 'Sending ', data
+        	radio.write(data)
+        	radio.startListening()
 
 
 def on_publish(obj, mid):
-          print("mid: " + str(mid))
+          #print("mid: " + str(mid))
+	pass
 
 def on_subscribe(obj, mid, granted_qos):
      print("Suscribed: " + str(mid) + " " + str(granted_qos))
@@ -39,6 +41,8 @@ def start_mosquitto():
      mqttc.connect("localhost", 1883, 60)
 
      mqttc.subscribe("home/sala/luz", 0)
+
+     #mqttc.subscribe("home/sala/temperature", 0)
 
      return mqttc
 
@@ -69,6 +73,10 @@ def loop_monitor():
                plen = radio.getDynamicPayloadSize()
                receive_payload = radio.read(plen)
                print 'Received ', receive_payload, ' len ',  plen
+	       if receive_payload[0] == 'T':
+	       	   data = receive_payload[1:] 	
+		   print 'Send ', data
+		   mqttc.publish("home/sala/temperature", data)	
           else:     
                time.sleep(1/100)
 
