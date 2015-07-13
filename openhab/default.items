@@ -1,0 +1,8 @@
+Group All
+Group gPlantaBaja (All)
+
+Group PB_Cochera "Cochera" <video> (gPlantaBaja)
+
+Number TestTemperature "Temperatura [%.1f C]" <temperature> (PB_Cochera) {mqtt="<[mosquitto:home/sala/temperature:state:default]"}
+Switch LuzCochera "Luz cochera"  {mqtt=">[mosquitto:home/cochera/luz:command:on:default],>[mosquitto:home/cochera/luz:command:off:default]"}
+Switch LuzSala "Luz sala" {mqtt=">[mosquitto:home/sala/luz:command:on:default],>[mosquitto:home/sala/luz:command:off:default],<[mosquitto:home/sala/luz:state:default]"}

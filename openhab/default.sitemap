@@ -1,0 +1,8 @@
+sitemap default label="Menu Principal"
+{
+	Frame label="Luces" {
+		Text item=TestTemperature
+		Switch item=LuzCochera
+		Switch item=LuzSala
+	}
+}
