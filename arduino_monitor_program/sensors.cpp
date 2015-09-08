@@ -28,7 +28,7 @@ Sensor::MessageType Sensor::getMessageTypeFromChar(char c)
       return Temperature;
     default:
       return NoSensor;
-  }    
+  } 
 }
 
 Sensor::MessageType Sensor::getMessageType()
@@ -42,42 +42,57 @@ Sensor::MessageType Sensor::getMessageType()
 /**
  * 
  */
-LightSensor::LightSensor(int pin)
+LightSensor::LightSensor(int relayPin, int currentSensorPin)
 {
-  _lightPin = pin;
-  _isOn = true;
+  _lightRelayPin = relayPin;
+  _currentSensorPin = currentSensorPin;
+  _lastLightStatus = false;
+
+  _emon = new EnergyMonitor();
+  
   _messageType = Light;
 }
 
 void LightSensor::setup()
 {  
-  pinMode(_lightPin, OUTPUT);
+  pinMode(_lightRelayPin, OUTPUT);
+
+  _emon->current(_currentSensorPin, 17);
 
   updateLight();
 }
 
 void LightSensor::read()
 {
-  if (_isOn)
+  double irms = _emon->calcIrms(1480) * 120.0;  
+  
+  bool currentStatus = irms > 10; //Suponiendo un bombillo mayor a 10 watts
+  
+  if (_lastLightStatus != currentStatus)
   {
-    printMessageLn("Light is on");
+    _lastLightStatus = currentStatus;
+    
+    if (_lastLightStatus)
+    {
+      printMessageLn("Light is on");
+    }
+    else
+    {
+      printMessageLn("Light is off");
+    }    
   }
-  else
-  {
-    printMessageLn("Light is off");
-  }  
 }
 
 void LightSensor::processMessage(char* message)
 {
   if (strcmp(message+1, ("on")) == 0)
   {
-    _isOn = true;
+    _lastLightStatus = true;
     updateLight();
   }
   else if (strcmp(message+1, ("off")) == 0)
   {
-    _isOn = false;
+    _lastLightStatus = false;
     updateLight();
   }
   else 
@@ -95,7 +110,7 @@ bool LightSensor::hasChanged()
 void LightSensor::getTextData(char* buffer)
 {
   buffer[0] = getMessageTypeChar(_messageType);
-  if (_isOn)
+  if (_lastLightStatus)
   {
     strcpy(buffer+1, "on");
   }
@@ -110,15 +125,14 @@ void LightSensor::getTextData(char* buffer)
 
 void LightSensor::updateLight()
 {
-  if (_isOn)
+  if (_lastLightStatus)
   {
-    digitalWrite(_lightPin, HIGH);
+    digitalWrite(_lightRelayPin, LOW);
   }
   else
   {
-    digitalWrite(_lightPin, LOW);    
+    digitalWrite(_lightRelayPin, HIGH);    
   }
-
 }
 
 //-------------------------------------------------
@@ -185,5 +199,72 @@ void TemperatureSensor::getTextData(char* buffer)
 
   printMessage(F("Message "));
   printMessageLn(buffer);  
+}
+
+//-------------------------------------------------
+// Door sensor
+//-------------------------------------------------
+
+DoorSensor::DoorSensor(int pin)
+{
+  _inputPin = pin;
+  _messageType = Door;
+  _lastStatus = -1;
+}
+
+void DoorSensor::setup()
+{  
+  pinMode(_inputPin, INPUT);
+  Serial.print("setup ");
+  Serial.println(_inputPin);
+}
+
+void DoorSensor::read()
+{
+  int status = digitalRead(_inputPin);
+  if (_lastStatus != status)
+  {
+    _lastStatus = status;
+    _changed = true;
+    Serial.println("changed");
+  }
+  else
+  {
+    _changed = false;
+  }
+  Serial.print("read ");
+  Serial.println(_lastStatus);
+}
+
+void DoorSensor::processMessage(char* message)
+{
+  
+}
+
+bool DoorSensor::hasChanged()
+{
+  return _changed;
+}
+
+void DoorSensor::getTextData(char* buffer)
+{
+  buffer[0] = getMessageTypeChar(_messageType);
+  if (isOpen())
+  {
+    strcpy(buffer+1, "open");
+  }
+  else
+  {
+    strcpy(buffer+1, "close");
+  }
+  
+  printMessage(F("Message "));
+  printMessageLn(buffer);
+  
+}
+
+bool DoorSensor::isOpen()
+{
+  return _lastStatus == OPEN_STATUS;
 }
 

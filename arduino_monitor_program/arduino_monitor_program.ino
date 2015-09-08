@@ -1,13 +1,16 @@
 #include <SPI.h>
 #include <printf.h>
+#include <EmonLib.h>                   
 #include "types.h"
 #include "sensors.h"
 #include "comm.h"
 
 
-const int endLoopDelay = 250;
-const int LIGHT_PIN = 5;
-const int TEMPERATURE_PIN = 0;
+const int endLoopDelay = 2500;
+const int CURRENT_SENSOR_PIN = 1;
+const int LIGHT_RELAY_PIN = 2;
+const int TEMPERATURE_SENSOR_PIN = 0;
+const int DOOR_SENSOR_PIN = 3;
 
 Sensor* sensors[10];
 int sensorsCount = 0;
@@ -20,11 +23,14 @@ void setup() {
 
   comm.setup();
 
-  LightSensor* lightSensor = new LightSensor(LIGHT_PIN);
-  registerSensor(lightSensor);
+  LightSensor* lightSensor = new LightSensor(LIGHT_RELAY_PIN, CURRENT_SENSOR_PIN);
+  //registerSensor(lightSensor);
 
-  TemperatureSensor* temperatureSensor = new TemperatureSensor(TEMPERATURE_PIN);
-  registerSensor(temperatureSensor);
+  TemperatureSensor* temperatureSensor = new TemperatureSensor(TEMPERATURE_SENSOR_PIN);
+  //registerSensor(temperatureSensor);
+  
+  DoorSensor* doorSensor = new DoorSensor(DOOR_SENSOR_PIN);
+  registerSensor(doorSensor);
   
   for (int i = 0; i < sensorsCount; i++)
   {

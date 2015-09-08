@@ -1,9 +1,10 @@
+#include <EmonLib.h>                   
 #include "types.h"
 
 class Sensor
 {
 	public: 
-    enum MessageType { AcknowledgeOK, Light, Temperature, NoSensor };
+    enum MessageType { AcknowledgeOK, Light, Temperature, Door, NoSensor };
 
     virtual void setup();
     
@@ -28,7 +29,7 @@ class LightSensor: public Sensor
 {
 	public:
     
-    LightSensor(int pin);
+    LightSensor(int relayPin, int currentSensorPin);
     
     virtual void setup();        
 
@@ -41,8 +42,11 @@ class LightSensor: public Sensor
 		virtual void getTextData(char* buffer);
     
   private:
-    int _lightPin;     
-    bool _isOn;
+    int _lightRelayPin;     
+    int _currentSensorPin;     
+    bool _lastLightStatus;
+
+    EnergyMonitor *_emon; 
 
     void updateLight();
 };
@@ -67,3 +71,30 @@ class TemperatureSensor: public Sensor
     int _inputPin;     
     float _degrees;    
 };
+
+class DoorSensor: public Sensor
+{
+  public:
+    
+    DoorSensor(int pin);
+    
+    virtual void setup();        
+
+    virtual void read();
+    
+    virtual void processMessage(char* message);
+    
+    virtual void getTextData(char* buffer);
+    
+    virtual bool hasChanged();
+    
+  private:
+    const int OPEN_STATUS = 1;
+    
+    int _inputPin;     
+    int _lastStatus;
+    bool _changed;
+
+    bool isOpen();
+};
+
