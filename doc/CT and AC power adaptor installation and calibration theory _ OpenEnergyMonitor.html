@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0108)http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>CT and AC power adaptor installation and calibration theory | OpenEnergyMonitor</title>
+  
+<script id="twitter-wjs" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/widgets.js"></script><script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/widgets.js"></script>
+<link rel="shortcut icon" href="http://openenergymonitor.org/emon/sites/default/files/emon3_favicon.png" type="image/x-icon">
+  <link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/aggregator.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/node.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/system.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/user.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/ckeditor.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/mollom.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/nice_menus.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/nice_menus_default.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/forum.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/views.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/tweetbutton.css">
+<link type="text/css" rel="stylesheet" media="all" href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/style.css">
+<style type="text/css" media="all">@import "/emon/sites/all/themes/emon3/user_bar.css";</style>
+  <script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/jquery.js"></script>
+<script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/drupal.js"></script>
+<script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/superfish.js"></script>
+<script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/nice_menus.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/emon/", "nice_menus_options": { "delay": "800", "speed": "fast" } });
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+</head>
+
+<body>
+
+<div id="box">
+
+<table border="0" cellpadding="0" cellspacing="0" id="header">
+  <tbody><tr>
+    <td id="logo">
+       <h1 class="site-name"><a href="http://openenergymonitor.org/emon/" title="Home">OpenEnergyMonitor</a></h1>    </td>
+    <td id="menu">
+      
+      <ul class="links" id="navlist"><li class="menu-254 first"><a href="http://openenergymonitor.org/emon/sustainable-energy" title="The OpenEnergyMonitor Vision">About</a></li>
+<li class="menu-198"><a href="http://openenergymonitor.org/emon/opensustech" title="Building upon the work and ideas of many people">Open source</a></li>
+<li class="menu-146"><a href="http://openenergymonitor.org/emon/people" title="People">People</a></li>
+<li class="menu-199"><a href="http://openenergymonitor.blogspot.com/" title="">Blog</a></li>
+<li class="menu-1073"><a href="http://shop.openenergymonitor.com/" title="">Shop</a></li>
+<li class="menu-1051"><a href="http://openenergymonitor.org/emon/forum" title="">Forums </a></li>
+<li class="menu-833 last"><a href="http://github.com/openenergymonitor" title="Software repositories for OpenEnergyMonitor project">GitHub</a></li>
+</ul>      <form action="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor.html" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text">
+</div>
+<input type="submit" name="op" id="edit-submit-1" value="Search" class="form-submit">
+<input type="hidden" name="form_build_id" id="form-iZ2kXHytfyhxRhiJmZZavNMhBn1guT0sMeUXKTOiyQ0" value="form-iZ2kXHytfyhxRhiJmZZavNMhBn1guT0sMeUXKTOiyQ0">
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form">
+</div>
+
+</div></form>
+      
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div></div></td>
+</tr>
+</tbody></table>
+<!--<div style="background-color:#444444; border-top: 1px solid #888; height:32px;">-->
+  <div class="block block-nice_menus" id="block-nice_menus-1">
+    <h2 class="title"></h2>
+    <div class="content"><ul class="nice-menu nice-menu-down sf-js-enabled" id="nice-menu-1"><li class="menu-1041 menuparent menu-path-openenergymonitororg-emon-guide first odd "><a href="http://openenergymonitor.org/emon/guide" title="">Get started</a><ul style="visibility: hidden; display: none;"><li class="menu-1647 menu-path-node-4898 first  odd "><a href="http://openenergymonitor.org/emon/guide" title="OpenEnergyMonitor Guide">General Guide</a></li>
+<li class="menu-1764 menu-path-openenergymonitororg-emon-modules-emonpi even  last "><a href="http://openenergymonitor.org/emon/modules/emonpi" title="Setup web-connected Raspberry Pi based energy monitor base-station using ready-to-go SD card ">emonPi / emonBase Setup</a></li>
+</ul>
+</li>
+<li class="menu-1042 menuparent menu-path-openenergymonitororg-emon-Modules even "><a href="http://openenergymonitor.org/emon/Modules" title="">Modules</a><ul style="visibility: hidden; display: none;"><li class="menu-1762 menu-path-node-10548 first  odd "><a href="http://openenergymonitor.org/emon/modules/emonpi" title="emonPi">emonPi / emonBase</a></li>
+<li class="menu-1602 menu-path-node-3252 even "><a href="http://openenergymonitor.org/emon/modules/emonTxV3" title="emonTx V3">emonTx V3</a></li>
+<li class="menu-1601 menu-path-node-3223 odd  last "><a href="http://openenergymonitor.org/emon/modules/emonTH" title="emonTH">emonTH</a></li>
+</ul>
+</li>
+<li class="menu-1043 menu-path-openenergymonitororg-emon-buildingblocks odd "><a href="http://openenergymonitor.org/emon/buildingblocks" title="">Building Blocks</a></li>
+<li class="menu-1044 menuparent menu-path-openenergymonitororg-emon-community even "><a href="http://openenergymonitor.org/emon/community" title="">Community</a><ul style="visibility: hidden; display: none;"><li class="menu-1052 menu-path-openenergymonitororg-emon-forum first  odd "><a href="http://openenergymonitor.org/emon/forum" title="">Forums </a></li>
+<li class="menu-1122 menu-path-node-751 even  last "><a href="http://openenergymonitor.org/emon/labs" title="Labs">Development &amp; Labs</a></li>
+</ul>
+</li>
+<li class="menu-1393 menu-path-wikiopenenergymonitororg- odd "><a href="http://wiki.openenergymonitor.org/" title="Technical Documentation Wiki ">Wiki</a></li>
+<li class="menu-1590 menu-path-Http--emoncmsorg even "><a href="http://emoncms.org/" title="open-source web-app for processing, logging and visualising energy, temperature and other environmental data">Emoncms</a></li>
+<li class="menu-1634 menu-path-openenergymonitororg-emon-sustainable-energy odd  last "><a href="http://openenergymonitor.org/emon/sustainable-energy" title="">Sustainable Energy</a></li>
+</ul>
+</div>
+ </div>
+
+<table border="0" cellpadding="0" cellspacing="0" id="content">
+  <tbody><tr>
+        <td valign="top">
+            <div id="main">
+        <div class="breadcrumb"><a href="http://openenergymonitor.org/emon/">Home</a></div>     
+        <div class="tabs"></div>
+                          <div class="node">
+
+    
+          <span class="submitted"></span>
+      <div class="taxonomy"></div>
+      <div class="content"><div class="tweetbutton"><iframe id="twitter-widget-i1440266734081364586" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/tweet_button.eb4cec9922931259d39f7e6e609af430.en.html" style="position: static; visibility: visible; width: 78px; height: 20px;" data-url="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory"></iframe></div><h1>Installation and Calibration</h1>
+<h2>Installation</h2>
+<div>This section discusses the voltage sensor (alternatively called Potential Transformer, Voltage Transformer, AC Adaptor), and the non-invasive current sensor (alternatively called Current Transformer, CT).</div>
+<div>&nbsp;</div>
+<div>For installations with more than one feed e.g. a 3-phase installation or a solar photo-voltaic installation, then a current sensor is required for each (i.e a total of 3 for a 3-phase supply without PV, or two for a domestic single phase supply and a PV installation).</div>
+<h3>1. Voltage sensor.</h3>
+<div><strong>(a)</strong> Single phase supply with or without PV:<br>
+Using the Mascot AC Adaptor: A BS.1363 (13 A) socket outlet is required within approx. 1 m of the electricity supply meter or distribution board / consumer unit. Assemble the DC Power Plug so that the inner connector goes to the side of the reversible 2-pin plug marked “-”.</div>
+<div>[Since the above was written, I have checked two more samples of the adapter. One was phased as described but the other was opposite. Therefore the advice is: if your power direction is wrong, reverse the DC Power plug, or turn your c.t. round.]</div>
+<div>Using the Ideal AC Adaptor: A BS.1363 (13 A) socket outlet is required within approx. 1 m of the electricity supply meter or distribution board / consumer unit. It is not possible to change the polarity of the adapter, therefore if the power direction is wrong, turn the c.t. around to face the opposite direction.</div>
+<div>&nbsp;</div>
+<div><strong>(b) </strong>Three phase supply: The recommended method is to monitor one phase as above, then add software in the sketch to derive an approximation for the voltages of the other two phases from this. Provided that the supply is reasonably solid – it has a high fault level and a low impedance - and is balanced and the loads are reasonably balanced, this should be adequate for monitoring purposes (but clearly it will not be accurate enough for billing).</div>
+<h3>2. Non-invasive current sensor.</h3>
+<div>Using the Yhdc SCT-013-000 split core clip-on current transformer:</div>
+<div>&nbsp;</div>
+<div><strong>(a)</strong> Single phase supply: Plug the lead from the CT into the EmonTx and then clip the CT around one cable that runs from the meter to the consumer unit. If you use the line cable (normally the outside one of the four coming out of the meter, red or brown insulation might be visible where the cable enters the meter terminal block), the face of the CT marked “ SCT-013-000” should point towards the meter. It is possible to install the CT on the supply side of the meter, in that case the face of the CT marked “SCT-013-000” should point away from the meter. This will ensure that imported power is shown as positive. If you use the neutral cable (normally the inner), then the face of the CT marked “SCT-013-000” should point the opposite way: away from the meter on the load side or towards the meter on the supply side. Do not put both cables through the CT.</div>
+<div>&nbsp;</div>
+<div><strong>(b) </strong>Three phase supply: Plug the leads from each of the CTs into the EmonTx and then clip each CT around one of the three line cables that run from the meter to the distribution board. Do not use the neutral cable. The face of the CT marked “SCT-013-000” should point towards the meter. This will ensure that imported power is shown as positive.&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong>(c)</strong> Single phase supply with PV: Plug the leads from the CTs into the EmonTx and then clip one CT around the line cable coming out of the mains supply meter (red or brown insulation might be visible where the cable enters the meter terminal block, and it is normally the outside one of the four coming out of the meter), the face of the CT marked “SCT-013-000” should point towards the meter. This will ensure that imported power is shown as positive. Similarly locate the line feed from the PV inverter where it feeds into the system (possibly into the consumer unit) and clip the CT on, the face of the CT marked “SCT-013-000” should point towards the PV inverter. This will ensure that generated power is shown as positive, and total consumption will be the algebraic sum of the two powers.</div>
+<div>&nbsp;</div>
+<h3>Accuracy</h3>
+<div>One major factor that can significantly impair the accuracy of a split-core CT is misalignment of the cores, which may introduce an air gap. Even a very small gap might cause the output to drop by 10% or more and that is accompanied by a huge phase shift, so it is important to ensure that the faces of the core are clean and properly aligned when the CT is installed.</div>
+<div>&nbsp;</div>
+<div>For example, introducing a thin piece of paper (0.004” - 0.1 mm thick) into one side of the core caused the output to drop by 7% at 100 A, and the phase to change by 15°.</div>
+<div>&nbsp;</div>
+<div>The core of the Yhdc CT is ferrite, a brittle material, so care should also be taken not to chip or break the core.</div>
+<h2>Calibration theory</h2>
+<p>(These notes were written with the emonTx V2 in mind. If you have an emonTx V3, the theory remains applicable but changed component values mean the actual numbers may be different.)</p>
+<h3>Voltage sensor – calibration theory</h3>
+<p>We are measuring the mains voltage. In order to do that, it is first transformed down to a safe voltage, then divided further before being applied to one of the analog inputs of the processor.</p>
+<p>The voltage transformer output is nominally 9 V for 230 V input, but this is at full load. When used as a voltage monitor for the EmonTx, it is effectively running on no load, and the voltage is approximately 20% higher (this is called the transformer “regulation” and the value depends on the design of the transformer, 20% is typical for this type and size).</p>
+<p>On the EmonTx PCB, the voltage is further reduced by the potential divider formed by R13 and R14, the ratio being 1/11 in the emonTx V2 but 1/13 in the emonTx V3. This voltage is then measured by the analog input of the processor relative to the processor supply voltage (in this case 3.3 V), which is used as the reference, and scaled so that the reference voltage would give the maximum count of 2<sup>10</sup>&nbsp;( = 1024).</p>
+<p>The input voltage to the processor has a constant bias added to it, but this is immediately removed by a software filter, so we can ignore it when calculating the calibration constant. Likewise we can work in rms values for both voltage and counts.</p>
+<p>Thus the number seen by the processor is:</p>
+<pre>
+
+counts = (input pin voltage ÷ 3.3) × 1024</pre><p>where</p>
+<pre>
+
+input pin voltage = adapter output voltage ÷ 11  (or 13)</pre><p>and</p>
+<pre>
+
+adapter output voltage = mains voltage × transformer ratio</pre><p>In software, in order to convert the count back to a meaningful voltage, it has to be multiplied by a calibration constant.</p>
+<pre>
+
+Vmains = count × a constant</pre><p>However, the processor is able to measure its own reference voltage, this and the full scale count are already included in the program. This removes these steps and simplifies the calculation, so for the emonTx V2 the constant should be</p>
+<pre>
+
+voltage constant = 230 × 11 ÷ (9 × 1.20) = 234.26</pre><p>This simplifies even further to:</p>
+<pre>
+
+voltage constant = alternating mains voltage ÷ alternating voltage at ADC input pin</pre><p>The calibration constant is passed into the calculation as the second parameter to the method EnergyMonitor::voltage( ) in the file EmonLib.cpp. It is hard-coded as a constant in the call in the sketch.</p>
+<h3>Voltage sensor – practice</h3>
+<div>In practice, the constant we calculated can be adjusted to take account of manufacturing tolerances in the components – the transformer and the resistors.</div>
+<div>&nbsp;</div>
+<div>The manufacturer of the transformer does not state the ratio, only the voltage at full load, therefore it must be measured. One sample measured 11.2 V with 240 V input, but this was subject to a possible measurement error of 3.3%.</div>
+<p>The resistors supplied in the kit have a tolerance of 5%, therefore these might contribute 10% to the possible error. However, the internal 1.1 V reference can also be in error by up to 9%, so the total error might be 19.5%.&nbsp;</p>
+<div>
+<div>Therefore, the expected range for the voltage constant is 182 – 287.6</div>
+</div>
+<h3>Current sensor – calibration theory</h3>
+<p>The supplied current is measured using a current transformer, and the resulting (small) current converted into a voltage by the burden resistor. This voltage is then measured by the analog input of the processor.</p>
+<p>This voltage is measured relative to the processor supply voltage (in this case 3.3 V), which is used as the reference, and scaled so that the reference voltage would give the maximum count of 2<sup>10</sup>&nbsp;( = 1024).</p>
+<p>The input voltage to the processor has a constant bias added to it, but this is immediately removed by a software filter, so we can ignore it when calculating the calibration constant. Likewise&nbsp;we can work in rms values for currents, voltages and counts.</p>
+<p>Thus the number seen by the processor is:</p>
+<pre>
+
+counts = (input pin voltage ÷ 3.3) × 1024</pre><p>where</p>
+<pre>
+
+input pin voltage = secondary current × burden resistance</pre><p>and</p>
+<pre>
+
+secondary current = primary current ÷ transformer ratio</pre><p>The CT burden resistor is 18 Ω in the emonTx V2, or 22 Ω &nbsp;and 120 Ω in the emonTx V3. The ratio of the current transformer is normally specified by the manufacturer as the ratio of maximum primary current to secondary current, e.g. 100 A : 50 mA.</p>
+<p>In software, in order to convert the count back to a meaningful current, it has to be multiplied by a calibration constant.</p>
+<pre>
+
+Isupply = count × a constant</pre><p>where</p>
+<pre>
+
+a constant = current constant × (3.3 ÷ 1024)</pre><p>and, for the emonTx V2</p>
+<pre>
+
+current constant = (100 ÷ 0.050) ÷ 18 = 111.11</pre><p>Or to put it in words, the current constant is the value of current you want to read when 1 V is produced across the burden resistor.</p>
+<p>The calibration constant is passed into the calculation as the second parameter to the method EnergyMonitor::current( ) in the file EmonLib.cpp. It is hard-coded as a constant in the call to current( ) in the sketch.</p>
+<p>&nbsp;</p>
+<div><strong>If you use a current transformer with a built-in burden (voltage output type)</strong></div>
+<div>&nbsp;</div>
+<div>Look at the last line of the theory where the current constant is derived:</div>
+<pre>
+
+current constant = (100 ÷ 0.050) ÷ 18 = 111.11</pre><div>"100" is the current transformer primary current, and "0.050 × 18" is in fact the voltage across the burden resistor for the standard c.t. and burden at that current, so to arrive at your current constant you simply substitute your transformer's rated current in place of "100" and the voltage it gives in place of "0.050 × 18". For example, the Yhdc SCT-013-030 gives 1 V at a rated current of 30 A, so for this transformer you have:</div>
+<pre>
+current constant = 30 ÷ 1 = 30</pre><p>Or to put it in words, the current constant is the value of current you want to read when 1 V is produced at the analogue input.</p>
+<h3>Current sensor – practice</h3>
+<div>The CT output is accurate to 1%. The CT burden resistor is a 1% tolerance component. However, the internal 1.1 V reference can be in error by up to 9%, so the total error should less than 11%.&nbsp; (This is not as bad as it might appear, the reference is very stable even though the actual value is imprecise, so once calibrated the error due to temperature variation and other factors should be less than 2%.)</div>
+<div>&nbsp;</div>
+<div>Therefore, the expected range for the current constant is 98.77 – 123.32</div>
+<div>&nbsp;</div>
+<div>
+<h3>Phase angle (power factor) constant</h3>
+<div>Checks of the phase response of the current and voltage sensors reveal that both have a phase error that varies in magnitude. In the case of the voltage sensor, it increases approximately linearly with increasing voltage; in the case of the current sensor, it falls rapidly at first with increasing current, then reaches a minimum before rising again as saturation sets in.</div>
+<div>&nbsp;</div>
+<div>Approximate values for the voltage sensor are: 3½° at 225 V, 4½° at 240 V and 5½° at 253V; and for the current sensor with a 15 Ω burden: 3½° at 3 A, 2½° at 30 A and 2° at 60 A. Fortunately, these errors are in the same direction, so the nett error can be very small, at 240 V and 1 A the error was too small to measure. The largest error is likely to be at medium to high load and high system voltage, when the nett error could reach 3½°.&nbsp;</div>
+<div>&nbsp;</div>
+<div>There is another source of phase error to be considered. In the software, the voltage and current are sampled in that order and conversion takes approximately 100 μs, thus the voltage is measured earlier than current by about 2° (all measurements were done at 50 Hz).&nbsp;</div>
+<div>&nbsp;</div>
+<div>Hence the nett error is likely to vary between 2° and 5½°. Note that if voltage and current were to be sampled in the reverse order (current first), then the nett error would range between -2° and +1½°.</div>
+<div>&nbsp;</div>
+<div>(It is worth considering the effect of these errors on the calculated values: power factor is the cosine of the phase angle, so when the power factor is close to 1, cos(2°) = 0.9994, &nbsp;cos(5½°) = 0.9954 so the power factor is in error by between 0.0006 and 0.0046. However, if the power factor is very poor (say 0.1), then the phase angle is 84.3° and error range becomes much larger – power factor will be calculated as 0.065 to 0.004. &nbsp;Or with reversed order of sampling, from 0.135 to 0.074, an error of about 0.03).</div>
+<div>&nbsp;</div>
+<div>The calibration constant is passed into the calculation as the third parameter to the method EnergyMonitor::voltage( ) in the file EmonLib.cpp. It is hard-coded as a constant in the call in the sketch.&nbsp;</div>
+<div>&nbsp;</div>
+<div>The correction algorithm in the software applies a proportion (the constant) of the difference between the present sampled value and the previous sampled value to the previous sample. Hence 1 returns the present value, zero returns the previous value and -1 will return (approximately) the value before that. By modifying the software to report the time it takes to complete the inner measurement loop and the number of samples recorded, the time between samples was measured as 377 μs. This equates to 6.79° (360° takes 20 ms).</div>
+<div>&nbsp;</div>
+<div>Note that the correction is centred around 1, i.e. a value of 1 applies no correction, zero and 2 apply approximately 7° of correction in opposite directions. A value of 1.28 will correct the inherent software error of 2° that arises from the delay between sampling voltage and current.</div>
+<div>&nbsp;</div>
+<div>For a detailed explanation of the correction algorithm, see&nbsp;<a href="http://openenergymonitor.org/emon/buildingblocks/explanation-of-the-phase-correction-algorithm">Explanation&nbsp;of&nbsp;the&nbsp;phase&nbsp;correction&nbsp;algorithm</a></div>
+</div>
+<p>&nbsp;</p>
+</div>
+    
+    
+      </div>
+      
+              </div>
+    </td>
+    <td id="sidebar-right">
+        <div class="block block-menu" id="block-menu-secondary-links">
+    <h2 class="title">Site Map</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first"><a href="http://openenergymonitor.org/emon/Modules" title="Modules">Modules</a></li>
+<li class="expanded active-trail"><a href="http://openenergymonitor.org/emon/buildingblocks" title="Building Blocks">Building Blocks</a><ul class="menu"><li class="collapsed first"><a href="http://openenergymonitor.org/emon/buildingblocks/setting-up-the-arduino-environment" title="Setting up the Arduino Environment">Setting up the Arduino Environment</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/avrisp" title="AVR ISP Programmers">AVR ISP Programmers</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/attiny" title="Setting up Arduino IDE for ATtiny&#39;s">Setting up Arduino IDE for ATtiny's</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/ac-power-introduction" title="An introduction to AC Power">An introduction to AC Power</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/ac-power-arduino-maths" title="AC Power Theory - Arduino maths">AC Power Theory - Arduino maths</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/ac-power-advanced-maths" title="AC Power Theory - Advanced maths">AC Power Theory - Advanced maths</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/3-phase-power" title="3-Phase Power">3-Phase Power</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/overload-protection-of-mains-electrical-circuits" title="Overload Protection of Mains Electrical Circuits">Overload Protection of Mains Electrical Circuits</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/appliance-inference" title="Appliance Inference">Appliance Inference</a></li>
+<li class="collapsed"><a href="http://openenergymonitor.org/emon/buildingblocks/measuring-voltage-with-an-acac-power-adapter" title="Measuring AC Voltage with an AC to AC power adapter">Measuring AC Voltage with an AC to AC power adapter</a></li>
+<li class="collapsed"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-sensors-introduction" title="CT sensors - Introduction">CT sensors - Introduction</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/digital-filters-for-offset-removal" title="Digital filters for offset removal">Digital filters for offset removal</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/dc-shunt" title="DC shunt">DC shunt</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/DS18B20-temperature-sensing" title="DS18B20 temperature sensing">DS18B20 temperature sensing</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/rtd-temperature-sensing" title="RTD temperature sensing">RTD temperature sensing</a></li>
+<li class="collapsed"><a href="http://openenergymonitor.org/emon/buildingblocks/introduction-to-pulse-counting" title="Introduction to pulse counting">Introduction to pulse counting</a></li>
+<li class="collapsed"><a href="http://openenergymonitor.org/emon/buildingblocks/12-input-pulse-counting" title="12 input pulse counting">12 input pulse counting</a></li>
+<li class="leaf active-trail"><a href="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor.html" title="CT and AC power adaptor installation and calibration theory" class="active">CT and AC power adaptor installation and calibration theory</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/calibration" title="Calibration">Calibration Procedure</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/explanation-of-the-phase-correction-algorithm" title="Explanation of the phase correction algorithm">Explanation of the phase correction algorithm</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/emontx-error-sources" title="Sources of error in the emonTx voltage and current inputs.">Sources of error in the emonTx voltage and current inputs.</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/measurement-implications-of-adc-resolution-at-low-current-values" title="Measurement implications of ADC resolution at low current values">Measurement implications of ADC resolution at low current values</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/how-good-is-your-multimeter" title="How good is your multimeter?">How good is your multimeter?</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/meters" title="Energy Meters">Energy Meters</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/EmonTx-in-North-America" title="EmonTx - Use in North America">EmonTx - Use in North America</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/which-radio-module" title="RFM Radio Modules - Identifying different types">RFM Radio Modules - Identifying different types</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b-wireless" title="HopeRF RFM12 wireless link">RFM12B - Part 1 - Hardware Overview</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/rfm12b2" title="RFM12B - Part 2 - Sending Data Between Modules">RFM12B - Part 2 - Sending Data Between Modules</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/master-slave-arduino-networking" title="Master-Slave Arduino networking">Master-Slave Arduino networking</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/opticalpulsesensor" title="Optical Utility Meter LED Pulse Sensor">Optical Utility Meter LED Pulse Sensor</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/wifi" title="Raspberry Pi WIFI">Raspberry Pi WIFI</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/simple-rf-link" title="Simple RF Link">Simple RF Link</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/xbee-link" title="How to add an Xbee Link">xbee-link</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/interfacing-with-sma-sunnyboy-pv-inverters-bluetooth" title="Interfacing with SMA SunnyBoy PV Inverters (Bluetooth)">Interfacing with SMA SunnyBoy PV Inverters (Bluetooth)</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/7-segment-display" title="7 segment display">7 segment display</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/mains-ac-relay-module" title="Mains AC Relay Module">Mains AC Relay Module</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/nokia-3310-lcd" title="Nokia 3310 LCD">Nokia 3310 LCD</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/sd-card-logging" title="SD Card Logging with Nuelectronics Real-time Datalog &amp; IO Shield">SD Card Logging with Nuelectronics Real-time Datalog &amp; IO Shield</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/sma-webbox-data-extractor" title="SMA webBox data extractor">SMA webBox data extractor</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/usb-data-logger" title="USB Data Logger">USB Data Logger</a></li>
+<li class="leaf"><a href="http://openenergymonitor.org/emon/buildingblocks/graphing-in-kst" title="Graphing in KST">Graphing in KST</a></li>
+<li class="collapsed last"><a href="http://openenergymonitor.org/emon/buildingblocks/java-programs" title="Java Programs">Java Programs</a></li>
+</ul></li>
+<li class="collapsed"><a href="http://openenergymonitor.org/emon/community%20" title="Community">Community</a></li>
+<li class="collapsed last"><a href="http://openenergymonitor.org/emon/archive" title="Archive and Unsorted">Archive and Unsorted</a></li>
+</ul></div>
+ </div>
+  <div class="block block-user" id="block-user-0">
+    <h2 class="title">User login</h2>
+    <div class="content"><form action="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?destination=node%2F548" accept-charset="UTF-8" method="post" id="user-login-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Username: <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required">
+</div>
+<div class="form-item" id="edit-pass-wrapper">
+ <label for="edit-pass">Password: <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" name="pass" id="edit-pass" maxlength="60" size="15" class="form-text required">
+</div>
+<input type="submit" name="op" id="edit-submit" value="Log in" class="form-submit">
+<div class="item-list"><ul><li class="first"><a href="http://openenergymonitor.org/emon/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="http://openenergymonitor.org/emon/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" id="form-o06bafBRVTIULWhGvelnFQf0hzE5nIXylsx5uWyLr2g" value="form-o06bafBRVTIULWhGvelnFQf0hzE5nIXylsx5uWyLr2g">
+<input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block">
+
+</div></form>
+</div>
+ </div>
+  <div class="block block-views" id="block-views-avatar-block_1">
+    <h2 class="title">Community</h2>
+    <div class="content"><div class="view view-avatar view-id-avatar view-display-id-block_1 view-dom-id-f2e26afc23ea89cdc1bb137e948510a9">
+    
+  
+  
+      <div class="view-content">
+      <table class="views-view-grid col-4">
+  <tbody>
+          <tr class="row-1 row-first">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/1587" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="edllew&#39;s picture" title="edllew&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/924" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="Robert Wall&#39;s picture" title="Robert Wall&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/4440" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/picture-4440.jpg" alt="pb66&#39;s picture" title="pb66&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8541" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="Toberwine&#39;s picture" title="Toberwine&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+              </tr>
+          <tr class="row-2">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8613" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="Christian77&#39;s picture" title="Christian77&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/3426" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/picture-3426.jpg" alt="Bill Thomson&#39;s picture" title="Bill Thomson&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/3" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/picture-3.jpg" alt="TrystanLea&#39;s picture" title="TrystanLea&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/6243" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="sparky77&#39;s picture" title="sparky77&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+              </tr>
+          <tr class="row-3">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8530" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="davekramkowski&#39;s picture" title="davekramkowski&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/937" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="Bramco&#39;s picture" title="Bramco&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8519" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="helianto&#39;s picture" title="helianto&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/7218" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="emjay&#39;s picture" title="emjay&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+              </tr>
+          <tr class="row-4">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/3988" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="EricD&#39;s picture" title="EricD&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8388" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="rob1953&#39;s picture" title="rob1953&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/6325" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="haden&#39;s picture" title="haden&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/8416" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/picture-8416.png" alt="beegee1962&#39;s picture" title="beegee1962&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+              </tr>
+          <tr class="row-5 row-last">
+                  <td class="col-1 col-first">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/6718" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="rjsc2000&#39;s picture" title="rjsc2000&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-2">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/238" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/picture-238.jpg" alt="Paul Reed&#39;s picture" title="Paul Reed&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-3">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/7363" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="nihonjin&#39;s picture" title="nihonjin&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+                  <td class="col-4 col-last">
+              
+  <div class="views-field views-field-picture">        <div class="field-content"><div class="picture">
+  <a href="http://openenergymonitor.org/emon/user/6518" title="View user profile."><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/default_0.png" alt="JD&#39;s picture" title="JD&#39;s picture" width="50" height="50" class="imagecache imagecache-avatar"></a></div>
+</div>  </div>          </td>
+              </tr>
+      </tbody>
+</table>
+    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="http://openenergymonitor.org/emon/community/details%20">
+    more  </a>
+</div>
+  
+  
+  
+</div></div>
+ </div>
+  <div class="block block-views" id="block-views-Forums-block_1">
+    <h2 class="title">Active forum topics</h2>
+    <div class="content"><div class="view view-Forums view-id-Forums view-display-id-block_1 view-dom-id-4a16fca8550faea4aa493eff686e7bab">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11157">Converting optical kWh pulse count into power reading</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 min 53 sec</em> ago</span>  </div></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11155">Why do pulse sensor readings from my generation meter differ from the daily outputs recorded on my inverter display?</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>15 min 27 sec</em> ago</span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11159">All feeds show inactive after moving to new system</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>23 min 33 sec</em> ago</span>  </div></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10391">IF YOUR POST ISN'T VISIBLE IMMEDIATELY, HERE'S WHY</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>21 weeks 1 day</em> ago</span>  </div></li>
+          <li class="views-row views-row-5 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11113">How to add an image to your post</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>1 week 2 days</em> ago</span>  </div></li>
+          <li class="views-row views-row-6 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11146">EmonTX &amp; Multiple DS18B20</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>1 hour 5 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-7 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11156">Uploading data to pvoutput.org</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>1 hour 50 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-8 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11160">Solar panel monitoring system project</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>2 hours 8 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-9 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11154">Adding  a 7 segment display to Arduino mk2 pv diverter small problem</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>2 hours 6 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-10 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10832">emoncms on WP8.1 </a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>2 hours 45 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-11 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11158">3CH WiFi Relay Control Board </a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>4 hours 3 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-12 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/5478">Newbie and some confusion on what to buy</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>4 hours 6 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-13 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11152">Emontx V3 showing pulse reading</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 hours 9 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-14 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10377">Which system can monitor enecsys inverters</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 hours 40 min</em> ago</span>  </div></li>
+          <li class="views-row views-row-15 views-row-odd views-row-last">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10868">Reading an Elster A1140 electricity meter remotely</a></span>  </div>  
+  <div class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 hours 58 min</em> ago</span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+ </div>
+  <div class="block block-aggregator" id="block-aggregator-feed-1">
+    <h2 class="title">Latest Blog posts</h2>
+    <div class="content"><div class="item-list"><ul><li class="first"><a href="http://openenergymonitor.blogspot.com/2015/08/3ch-wifi-relay-control-board.html">3CH WiFi Relay Control Board</a>
+</li>
+<li><a href="http://openenergymonitor.blogspot.com/2015/08/understanding-zero-carbon-energy.html">Understanding zero carbon energy systems: Energy storage (part 1)</a>
+</li>
+<li><a href="http://openenergymonitor.blogspot.com/2015/07/new-myelectric-app-realtime-power-graph.html">New MyElectric Emoncms app, realtime power graph and energy totals</a>
+</li>
+<li><a href="http://openenergymonitor.blogspot.com/2015/07/adding-rtc-to-emonpi.html">Adding a RTC to the emonPi</a>
+</li>
+<li class="last"><a href="http://openenergymonitor.blogspot.com/2015/07/what-is-embodied-energy-of.html">What is the embodied energy of a microcontroller?</a>
+</li>
+</ul></div><div class="more-link"><a href="http://openenergymonitor.org/emon/aggregator/sources/1" title="View this feed&#39;s recent news.">more</a></div></div>
+ </div>
+  <div class="block block-block" id="block-block-1">
+    <h2 class="title"></h2>
+    <div class="content"><p><iframe id="twitter-widget-i1440266734084450077" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-timeline twitter-timeline-rendered" allowfullscreen="true" style="position: static; visibility: visible; width: 520px; height: 600px; padding: 0px; border: none; display: block; min-width: 180px; max-width: 100%; min-height: 200px; margin-top: 0px; margin-bottom: 0px;" data-widget-id="485068137952317440" data-user-id="314478070" title="Twitter Timeline"></iframe> </p>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><p></p>
+</div>
+ </div>
+  <div class="block block-views" id="block-views-popular_topics-block_1">
+    <h2 class="title">Popular topics updated in the last month</h2>
+    <div class="content"><div class="view view-popular-topics view-id-popular_topics view-display-id-block_1 view-dom-id-6a0a15abd9b00332e0a52964c959a660">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11062">emonTH Unreliable reading timing?</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(104 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 days 3 hours</em> ago</span>  </span></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11009">EmonCMS 9.0 preview | 2015.08.03 released </a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(103 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>6 days 23 hours</em> ago</span>  </span></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10190">Application specific dashboards: Solar PV</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(88 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>3 weeks 5 days</em> ago</span>  </span></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/5743">Simple invasive 3-phase energy monitor</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(62 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>1 week 3 days</em> ago</span>  </span></li>
+          <li class="views-row views-row-5 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10165">Turnkey system for the US?</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(58 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>3 days 20 hours</em> ago</span>  </span></li>
+          <li class="views-row views-row-6 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10900">Data loss due to RF packets getting corrupted</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(50 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>3 weeks 1 day</em> ago</span>  </span></li>
+          <li class="views-row views-row-7 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/11088">Events module and emoncms compatability</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(41 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>5 days 13 min</em> ago</span>  </span></li>
+          <li class="views-row views-row-8 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10934">V8.6 - 9.x (extended) Development</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(40 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>2 weeks 5 days</em> ago</span>  </span></li>
+          <li class="views-row views-row-9 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/589">Software only solution for feeding weather data</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(37 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>1 week 17 hours</em> ago</span>  </span></li>
+          <li class="views-row views-row-10 views-row-even views-row-last">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://openenergymonitor.org/emon/node/10419">emonTxV3_4_3Phase_Voltage sketch reporting incorrect values</a></span>  </div>  
+  <span class="views-field views-field-comment-count">        <span class="field-content">(31 comments)</span>  </span>  
+  <span class="views-field views-field-last-comment-timestamp">        <span class="field-content"><em>3 weeks 1 day</em> ago</span>  </span></li>
+      </ul></div>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-current first">1</li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=1" title="Go to page 2" class="active">2</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=2" title="Go to page 3" class="active">3</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=3" title="Go to page 4" class="active">4</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=4" title="Go to page 5" class="active">5</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=5" title="Go to page 6" class="active">6</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=6" title="Go to page 7" class="active">7</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=7" title="Go to page 8" class="active">8</a></li>
+<li class="pager-item"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=8" title="Go to page 9" class="active">9</a></li>
+<li class="pager-ellipsis">…</li>
+<li class="pager-next"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=1" title="Go to next page" class="active">next ›</a></li>
+<li class="pager-last last"><a href="http://openenergymonitor.org/emon/buildingblocks/ct-and-ac-power-adaptor-installation-and-calibration-theory?page=16" title="Go to last page" class="active">last »</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div></div>
+ </div>
+    </td>  </tr>
+</tbody></table>
+
+<div id="footer">
+  <p>Open-source tools for energy monitoring and analysis.&nbsp;This project uses the <a href="http://openenergymonitor.org/emon/node/4">GNU General Public Licence</a></p>
+    <div class="block block-node" id="block-node-0">
+    <h2 class="title">Syndicate</h2>
+    <div class="content"><a href="http://openenergymonitor.org/emon/rss.xml" class="feed-icon"><img src="./CT and AC power adaptor installation and calibration theory _ OpenEnergyMonitor_files/feed.png" alt="Syndicate content" title="Syndicate" width="16" height="16"></a></div>
+ </div>
+ 
+</div>
+
+
+</div>
+
+
+
+</body></html>

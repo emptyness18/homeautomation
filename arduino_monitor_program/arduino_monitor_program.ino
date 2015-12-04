@@ -24,13 +24,13 @@ void setup() {
   comm.setup();
 
   LightSensor* lightSensor = new LightSensor(LIGHT_RELAY_PIN, CURRENT_SENSOR_PIN);
-  //registerSensor(lightSensor);
+  registerSensor(lightSensor);
 
   TemperatureSensor* temperatureSensor = new TemperatureSensor(TEMPERATURE_SENSOR_PIN);
-  //registerSensor(temperatureSensor);
+  registerSensor(temperatureSensor);
   
   DoorSensor* doorSensor = new DoorSensor(DOOR_SENSOR_PIN);
-  registerSensor(doorSensor);
+  //registerSensor(doorSensor);
   
   for (int i = 0; i < sensorsCount; i++)
   {

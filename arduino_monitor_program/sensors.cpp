@@ -65,6 +65,8 @@ void LightSensor::setup()
 void LightSensor::read()
 {
   double irms = _emon->calcIrms(1480) * 120.0;  
+
+  printMessageLn(irms);
   
   bool currentStatus = irms > 10; //Suponiendo un bombillo mayor a 10 watts
   
